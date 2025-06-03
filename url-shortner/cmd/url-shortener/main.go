@@ -5,12 +5,13 @@ import (
 	"net/http"
 	"os"
 
-	"example.com/url-shortner/url-shortner/internal/config"
-	"example.com/url-shortner/url-shortner/internal/http-server/handlers/url/save"
-	mwLogger "example.com/url-shortner/url-shortner/internal/http-server/middleware/logger"
-	"example.com/url-shortner/url-shortner/internal/lib/logger/handlers/slogpretty"
-	"example.com/url-shortner/url-shortner/internal/lib/logger/sl"
-	"example.com/url-shortner/url-shortner/internal/storage/sqlite"
+	"url-shortner/url-shortner/internal/config"
+	"url-shortner/url-shortner/internal/http-server/handlers/url/save"
+	mwLogger "url-shortner/url-shortner/internal/http-server/middleware/logger"
+	"url-shortner/url-shortner/internal/lib/logger/handlers/slogpretty"
+	"url-shortner/url-shortner/internal/lib/logger/sl"
+	"url-shortner/url-shortner/internal/storage/sqlite"
+
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )

@@ -5,10 +5,10 @@ import (
 	"log/slog"
 	"net/http"
 
-	resp "example.com/url-shortner/url-shortner/internal/lib/api/response"
-	"example.com/url-shortner/url-shortner/internal/lib/logger/sl"
-	"example.com/url-shortner/url-shortner/internal/lib/random"
-	"example.com/url-shortner/url-shortner/internal/storage"
+	resp "url-shortner/url-shortner/internal/lib/api/response"
+	"url-shortner/url-shortner/internal/lib/logger/sl"
+	"url-shortner/url-shortner/internal/lib/random"
+	"url-shortner/url-shortner/internal/storage"
 
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"
@@ -31,7 +31,7 @@ type URLSaver interface {
 
 const aliasLenght = 8
 
-//go:generate go run github.com/vektra/mockery/v2@v2.28.2 --name=URLSaver
+//go:generate go run github.com/vektra/mockery/v2@v2.53.4 --name=URLSaver
 
 func New(log *slog.Logger, urlSaver URLSaver) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
