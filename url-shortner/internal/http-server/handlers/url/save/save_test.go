@@ -9,12 +9,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/stretchr/testify/mock"
+	"github.com/stretchr/testify/require"
+
 	"url-shortner/url-shortner/internal/http-server/handlers/url/save"
 	"url-shortner/url-shortner/internal/http-server/handlers/url/save/mocks"
 	"url-shortner/url-shortner/internal/lib/logger/handlers/slogdiscard"
-
-	"github.com/stretchr/testify/mock"
-	"github.com/stretchr/testify/require"
 )
 
 func TestSaveHandler(t *testing.T) {

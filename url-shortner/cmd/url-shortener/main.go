@@ -5,15 +5,16 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+
 	"url-shortner/url-shortner/internal/config"
+	"url-shortner/url-shortner/internal/http-server/handlers/redirect"
 	"url-shortner/url-shortner/internal/http-server/handlers/url/save"
 	mwLogger "url-shortner/url-shortner/internal/http-server/middleware/logger"
 	"url-shortner/url-shortner/internal/lib/logger/handlers/slogpretty"
 	"url-shortner/url-shortner/internal/lib/logger/sl"
 	"url-shortner/url-shortner/internal/storage/sqlite"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
 )
 
 const (
@@ -46,6 +47,7 @@ func main() {
 	router.Use(mwLogger.New(log))
 
 	router.Post("/url", save.New(log, storage))
+	router.Get("/{alias}", redirect.New(log, storage))
 
 	log.Info("starting server", slog.String("address", cfg.Adress))
 

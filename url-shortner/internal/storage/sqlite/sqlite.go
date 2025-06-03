@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"url-shortner/url-shortner/internal/storage"
-
 	"github.com/mattn/go-sqlite3"
+
+	"url-shortner/url-shortner/internal/storage"
 )
 
 type Storage struct {
