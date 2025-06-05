@@ -14,11 +14,11 @@ import (
 	"url-shortner/url-shortner/internal/storage"
 )
 
+//go:generate go run github.com/vektra/mockery/v2@v2.53.4 --name=URLGetter
 type URLGetter interface {
 	GetURL(alias string) (string, error)
 }
 
-//go:generate go run github.com/vektra/mockery/v2@v2.53.4 --name=URLGetter
 func New(log *slog.Logger, urlGetter URLGetter) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		const op = "handlers.url.redirect.New"

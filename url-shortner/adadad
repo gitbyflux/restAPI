@@ -1,0 +1,212 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "alt+j",
+        "command": "emacs.cursorLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+h",
+        "command": "-emacs.cursorLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+;",
+        "command": "emacs.cursorRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l",
+        "command": "-emacs.cursorRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "emacs.cursorDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+j",
+        "command": "-emacs.cursorDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+l",
+        "command": "emacs.cursorUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+k",
+        "command": "-emacs.cursorUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+alt+space ctrl+alt+l",
+        "command": "emacs.M-w"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "findWidgetVisible"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-editor.action.nextMatchFindAction",
+        "when": "findWidgetVisible"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "actions.find",
+        "when": "!findWidgetVisible"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-actions.find",
+        "when": "!findWidgetVisible"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.closeMessages",
+        "when": "globalMessageVisible"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "-emacs.C-/",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-emacs.C-g",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+x ctrl+o",
+        "command": "-emacs.C-x_C-o",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+x r",
+        "command": "-emacs.C-x_r",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+x u",
+        "command": "-emacs.C-x_u",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+[IntlBackslash]",
+        "command": "-emacs.cursorBottom",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+.",
+        "command": "-emacs.cursorBottom",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "down",
+        "command": "-emacs.cursorDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "end",
+        "command": "-emacs.cursorEnd",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+f",
+        "command": "-emacs.cursorEnd",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "home",
+        "command": "-emacs.cursorHome",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+a",
+        "command": "-emacs.cursorHome",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "left",
+        "command": "-emacs.cursorLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "pagedown",
+        "command": "-emacs.cursorPageDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-emacs.cursorPageDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "pageup",
+        "command": "-emacs.cursorPageUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+v",
+        "command": "-emacs.cursorPageUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "right",
+        "command": "-emacs.cursorRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+[IntlBackslash]",
+        "command": "-emacs.cursorTop",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+,",
+        "command": "-emacs.cursorTop",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "up",
+        "command": "-emacs.cursorUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "alt+s",
+        "command": "-emacs.cursorWordLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+d",
+        "command": "-emacs.cursorWordRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+r",
+        "command": "-emacs.deleteRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+o",
+        "command": "-emacs.deleteWordRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+i",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+o",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorTextFocus"
+    }
+]
