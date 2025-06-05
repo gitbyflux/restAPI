@@ -10,6 +10,7 @@ import (
 
 	"url-shortner/url-shortner/internal/config"
 	"url-shortner/url-shortner/internal/http-server/handlers/redirect"
+	"url-shortner/url-shortner/internal/http-server/handlers/url/delete"
 	"url-shortner/url-shortner/internal/http-server/handlers/url/save"
 	mwLogger "url-shortner/url-shortner/internal/http-server/middleware/logger"
 	"url-shortner/url-shortner/internal/lib/logger/handlers/slogpretty"
@@ -51,6 +52,7 @@ func main() {
 			cfg.HTTPServer.User: cfg.HTTPServer.Password,
 		}))
 		r.Post("/", save.New(log, storage))
+		r.Delete("/", delete.New(log, storage))
 
 		// TODO: add Delete /url/{id}
 	})
