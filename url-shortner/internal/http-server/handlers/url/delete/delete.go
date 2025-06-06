@@ -25,6 +25,8 @@ type URLDeleter interface {
 	DeleteURL(alias string) (string, error)
 }
 
+//go:generate go run github.com/vektra/mockery/v2@v2.53.4 --name=URLDeleter
+
 func New(log *slog.Logger, urlDeleter URLDeleter) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		const op = "handlers.url.delete.New"
