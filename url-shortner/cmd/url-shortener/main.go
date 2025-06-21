@@ -5,9 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
-
+	ssogrpc "url-shortner/url-shortner/internal/clients/sso/grpc"
 	"url-shortner/url-shortner/internal/config"
 	"url-shortner/url-shortner/internal/http-server/handlers/redirect"
 	"url-shortner/url-shortner/internal/http-server/handlers/url/delete"
@@ -16,6 +14,9 @@ import (
 	"url-shortner/url-shortner/internal/lib/logger/handlers/slogpretty"
 	"url-shortner/url-shortner/internal/lib/logger/sl"
 	"url-shortner/url-shortner/internal/storage/sqlite"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 )
 
 const (
@@ -31,6 +32,20 @@ func main() {
 
 	log.Info("starting url shortener", slog.String("env", cfg.Env))
 	log.Debug("debug messages are enabled")
+
+	//ssoClient - _
+	_, err := ssogrpc.New(
+		log,
+		cfg.Clients.SSO.Addres,
+		cfg.Clients.SSO.Timeout,
+		cfg.Clients.SSO.RetriesCount,
+	)
+	if err != nil {
+		log.Error("failed to init sso client", sl.Err(err))
+		os.Exit(1)
+	}
+
+	//ssoClient.IsAdmin(context.Background(), 1)
 
 	storage, err := sqlite.New(cfg.StoragePatch)
 	if err != nil {
